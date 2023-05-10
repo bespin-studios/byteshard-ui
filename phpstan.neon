@@ -1,0 +1,8 @@
+parameters:
+	bootstrapFiles:
+		- phpstan-bootstrap.php
+	dynamicConstantNames:
+		- DEBUG
+	paths:
+		- src
+	level: 9

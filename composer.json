@@ -1,0 +1,57 @@
+{
+  "name": "byteshard/ui",
+  "description": "byteShard PHP UI",
+  "minimum-stability": "stable",
+  "license": "MPL-2.0",
+  "authors": [
+    {
+      "name": "Lars Hennig"
+    }
+  ],
+  "config": {
+    "allow-plugins": {
+      "byteshard/asset-plugin": false
+    }
+  },
+  "require": {
+    "byteshard/asset-plugin": "^v1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "byteShard\\": "src/byteShard"
+    }
+  },
+  "extra": {
+    "npm": {
+      "scripts" : {
+        "postinstall" : "node ./node_modules/@byteshard/frontend/run.js",
+        "build" : "webpack --mode production",
+        "watch" : "webpack --devtool eval-source-map --watch --mode development"
+      },
+      "dependencies" : {
+        "@byteshard/frontend": "~1.1.1",
+        "@byteshard/dhx": "5.0.8",
+        "@byteshard/scheduler": "5.3.11"
+      },
+      "devDependencies" : {
+        "copy-webpack-plugin" : "^11.0.0",
+        "webpack" : "^5.75.0",
+        "webpack-cli" : "^5.0.1",
+        "webpack-merge-and-include-globally" : "^2.3.4",
+        "@babel/runtime" : "^7.20.7",
+        "css-loader" : "^6.7.3",
+        "css-minimizer-webpack-plugin" : "^4.2.2",
+        "mini-css-extract-plugin" : "^2.7.2",
+        "ts-loader" : "^9.4.2"
+      }
+    }
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^1.9",
+    "byteshard/core": "^1.0",
+    "byteshard/debug": "^1.0",
+    "byteshard/schema": "^1.0",
+    "byteshard/form": "^1.0",
+    "byteshard/toolbar": "^1.0"
+  }
+}

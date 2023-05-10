@@ -1,0 +1,12 @@
+.git
+
+DeveloperEnvironment
+
+.idea/
+.DS_Store
+vendor/
+
+/.config/
+/.npm/
+node_modules/
+.npmrc
