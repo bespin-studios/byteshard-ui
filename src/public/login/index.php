@@ -2,6 +2,7 @@
 
 use byteShard\Environment;
 use byteShard\Internal\ErrorHandler;
+use byteShard\Internal\Server;
 
 require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'config.php';
 
@@ -13,6 +14,5 @@ if (isset($error_handler) && $error_handler instanceof ErrorHandler) {
 }
 
 if (isset($env) && $env instanceof Environment) {
-    $template = $env->getLoginTemplate();
-    $template->printLoginForm();
+    $env->getLoginTemplate()->printLoginForm(Server::getBaseUrl(), $env->getAppName(), $env->getFaviconPath());
 }
