@@ -142,16 +142,16 @@
         },
         {
             "name": "byteshard/core",
-            "version": "v1.7.0",
+            "version": "v1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/byteshard/core.git",
-                "reference": "680bfdc5e440f91752289e852209579b71515ac2"
+                "reference": "f74c3975f44424c1060eae8ef77902ede0d51604"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/byteshard/core/zipball/680bfdc5e440f91752289e852209579b71515ac2",
-                "reference": "680bfdc5e440f91752289e852209579b71515ac2",
+                "url": "https://api.github.com/repos/byteshard/core/zipball/f74c3975f44424c1060eae8ef77902ede0d51604",
+                "reference": "f74c3975f44424c1060eae8ef77902ede0d51604",
                 "shasum": ""
             },
             "require": {
@@ -216,9 +216,9 @@
             "description": "byteShard PHP core",
             "support": {
                 "issues": "https://github.com/byteshard/core/issues",
-                "source": "https://github.com/byteshard/core/tree/v1.7.0"
+                "source": "https://github.com/byteshard/core/tree/v1.8.0"
             },
-            "time": "2024-04-24T10:56:51+00:00"
+            "time": "2024-04-26T09:57:43+00:00"
         },
         {
             "name": "byteshard/debug",
@@ -396,16 +396,16 @@
         },
         {
             "name": "byteshard/ldap",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/byteshard/ldap.git",
-                "reference": "e0cd74532bfa61b9fb47543cecf8339b0c446383"
+                "reference": "b7200b4319fffeabc5d30a8802f5059056d5a5cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/byteshard/ldap/zipball/e0cd74532bfa61b9fb47543cecf8339b0c446383",
-                "reference": "e0cd74532bfa61b9fb47543cecf8339b0c446383",
+                "url": "https://api.github.com/repos/byteshard/ldap/zipball/b7200b4319fffeabc5d30a8802f5059056d5a5cf",
+                "reference": "b7200b4319fffeabc5d30a8802f5059056d5a5cf",
                 "shasum": ""
             },
             "require": {
@@ -440,9 +440,9 @@
             "description": "Ldap wrapper for the byteShard framework",
             "support": {
                 "issues": "https://github.com/byteshard/ldap/issues",
-                "source": "https://github.com/byteshard/ldap/tree/v1.0.2"
+                "source": "https://github.com/byteshard/ldap/tree/v1.0.3"
             },
-            "time": "2023-06-12T14:31:44+00:00"
+            "time": "2024-04-24T11:14:00+00:00"
         },
         {
             "name": "byteshard/locale",
