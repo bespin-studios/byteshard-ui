@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/byteshard/ui/compare/v1.1.0...v1.1.1) (2024-04-26)
+
+
+### Bug Fixes
+
+* check if app config implements oauth interface ([08b9004](https://github.com/byteshard/ui/commit/08b90047c09c415397972e3de2dce0338ecac156))
+* use correct composer.lock ([d35c717](https://github.com/byteshard/ui/commit/d35c7173e3dee50e1ed40a0c80cc7a078f13c125))
+
 # [1.1.0](https://github.com/byteshard/ui/compare/v1.0.0...v1.1.0) (2024-04-24)
 
 
