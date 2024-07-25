@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/byteshard/ui/compare/v1.1.1...v1.1.2) (2024-07-25)
+
+
+### Bug Fixes
+
+* update dependencies ([336ee85](https://github.com/byteshard/ui/commit/336ee85909c3b813cd8bbdeb48b6888ed28c640e))
+
 ## [1.1.1](https://github.com/byteshard/ui/compare/v1.1.0...v1.1.1) (2024-04-26)
 
 
