@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/bespin-studios/byteshard-ui/compare/v1.1.2...v1.1.3) (2024-09-25)
+
+
+### Bug Fixes
+
+* reflect the renaming of the organization ([8d0746e](https://github.com/bespin-studios/byteshard-ui/commit/8d0746e19330c1ef518cdb79d1ad516bd6d47b66))
+
 ## [1.1.2](https://github.com/byteshard/ui/compare/v1.1.1...v1.1.2) (2024-07-25)
 
 
