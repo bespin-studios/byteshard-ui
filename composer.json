@@ -24,14 +24,14 @@
   "extra": {
     "npm": {
       "scripts": {
-        "postinstall": "node ./node_modules/@byteshard/frontend/run.js",
+        "postinstall": "node ./node_modules/@bespin-studios/byteshard-frontend/run.js",
         "build": "node --stack-size=1000 ./node_modules/webpack/bin/webpack.js --mode production",
         "watch": "node --stack-size=1000 ./node_modules/webpack/bin/webpack.js --devtool eval-source-map --watch --mode development"
       },
       "dependencies" : {
-        "@byteshard/frontend": "~1.8.0",
-        "@byteshard/dhx": "5.0.8",
-        "@byteshard/scheduler": "5.3.11"
+        "@bespin-studios/byteshard-frontend": "~1.8.0",
+        "@bespin-studios/dhx": "5.0.8",
+        "@bespin-studios/scheduler": "5.3.11"
       },
       "devDependencies" : {
         "@babel/runtime": "^7.24.8",
