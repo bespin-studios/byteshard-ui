@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/bespin-studios/byteshard-ui/compare/v1.1.3...v1.1.4) (2024-10-02)
+
+
+### Bug Fixes
+
+* upgrade dependencies ([fff1560](https://github.com/bespin-studios/byteshard-ui/commit/fff1560f52ab240ea768c0b54dc7af48c585659e))
+
 ## [1.1.3](https://github.com/bespin-studios/byteshard-ui/compare/v1.1.2...v1.1.3) (2024-09-25)
 
 
