@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/bespin-studios/byteshard-ui/compare/v1.1.4...v1.2.0) (2025-02-13)
+
+
+### Features
+
+* support dynamic cell content ([5e5cb8c](https://github.com/bespin-studios/byteshard-ui/commit/5e5cb8c6c212894879095cb923e2296c80a2af0e))
+
 ## [1.1.4](https://github.com/bespin-studios/byteshard-ui/compare/v1.1.3...v1.1.4) (2024-10-02)
 
 
