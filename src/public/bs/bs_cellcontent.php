@@ -5,6 +5,7 @@
  */
 
 use byteShard\Cell;
+use byteShard\DynamicCellContent;
 use byteShard\Enum;
 use byteShard\Form;
 use byteShard\Internal\CellContent;
@@ -47,9 +48,22 @@ if ($request->getEvent() === Request\EventType::OnCellInit || $request->getEvent
         $eventHandler->onTabChange($request->getAffectedId());
     }
 
-    $cell = Session::getCell($request->getId());
+    $cell      = Session::getCell($request->getId());
+    $className = '';
+    $id        = $request->getId();
+    if ($id?->isCellId() === true) {
+        $dynamicClassName = Cell::getClassName($id);
+        if (class_exists($dynamicClassName) && is_subclass_of($dynamicClassName, DynamicCellContent::class)) {
+            $dynamicClass = new $dynamicClassName($cell);
+            $className    = $dynamicClass->getDynamicContentClassName();
+            $cell         = $dynamicClass->getDynamicCell($className);
+        }
+    }
+
     if ($cell !== null) {
-        $className   = $cell->getContentClass();
+        if ($className === '') {
+            $className = $cell->getContentClass();
+        }
         $cellContent = new $className($cell);
         if ($cellContent instanceof CellContent) {
             if ($cellContent instanceof Form) {

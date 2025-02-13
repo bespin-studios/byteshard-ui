@@ -48,7 +48,7 @@
     }
   },
   "require-dev": {
-    "phpstan/phpstan": "^1.9",
+    "phpstan/phpstan": "^1.12.18",
     "byteshard/core": "^2.0",
     "byteshard/debug": "^1.0",
     "byteshard/schema": "^1.0",
