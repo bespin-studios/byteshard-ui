@@ -20,21 +20,27 @@ if (isset($error_handler) && ($error_handler instanceof byteShard\Internal\Error
     $error_handler->setResultObject(ErrorHandler::RESULT_OBJECT_POPUP);
 }
 
-if (isset($_SESSION['loaderState']['action'])) {
+if (
+    isset($_SESSION['loaderState']) &&
+    is_array($_SESSION['loaderState']) &&
+    isset($_SESSION['loaderState']['action']) &&
+    is_array($_SESSION['loaderState']['action'])
+) {
     $result['state'] = 2;
-    $actions         = $_SESSION['loaderState']['action']['nested'];
-    $data            = $_SESSION['loaderState']['action']['id'];
-    $async           = $_SESSION['loaderState']['action']['async'];
-    $asyncUrl        = $_SESSION['loaderState']['action']['asyncUrl'];
-    $asyncActions    = $_SESSION['loaderState']['action']['asyncNested'];
-    $asyncProxy      = $_SESSION['loaderState']['action']['asyncProxy'];
-    $asyncTimeout    = $_SESSION['loaderState']['action']['asyncTimeout'];
-    if (is_string($_SESSION['loaderState']['action']['cell'])) {
-        $cell = $_SESSION[MAIN]->getCell($_SESSION[MAIN]->getIDByName($_SESSION['loaderState']['action']['cell']));
-    } else {
-        $cell = $_SESSION['loaderState']['action']['cell'];
-    }
+    $actionArr       = $_SESSION['loaderState']['action'];
+    $actions         = $actionArr['nested'] ?? null;
+    $data            = $actionArr['id'] ?? null;
+    $async           = $actionArr['async'] ?? null;
+    $asyncUrl        = $actionArr['asyncUrl'] ?? null;
+    $asyncActions    = $actionArr['asyncNested'] ?? null;
+    $asyncProxy      = $actionArr['asyncProxy'] ?? null;
+    $asyncTimeout    = $actionArr['asyncTimeout'] ?? null;
+
+    $cell = isset($actionArr['cell']) && is_string($actionArr['cell'])
+        ? $_SESSION[MAIN]->getCell($_SESSION[MAIN]->getIDByName($actionArr['cell']))
+        : ($actionArr['cell'] ?? null);
     unset($_SESSION['loaderState']['action']);
+
     if ($async === true) {
         //exec('/usr/bin/php /Users/Shared/Sites/cam/public/log.php > /dev/null 2>/dev/null &');
 
@@ -46,19 +52,19 @@ if (isset($_SESSION['loaderState']['action'])) {
         $ch = curl_init();
         if (empty($asyncUrl)) {
             $host = explode(':', Server::getHost());
-            if (count($host) === 2) {
+            if (count($host) === 2 && is_numeric($host[1])) {
                 Debug::debug('[bs::loader] Async port: '.$host[1]);
-                curl_setopt($ch, CURLOPT_PORT, $host[1]);
+                curl_setopt($ch, CURLOPT_PORT, (int)$host[1]);
             }
             $context  = str_replace(Server::getProtocol().'://'.Server::getHost(), '', BS_WEB_FRAMEWORK_DIR);
             $asyncUrl = rtrim(Server::getProtocol().'://'.$host[0].'/'.trim($context, '/'), '/').'/bs_async.php';
         }
-        Debug::debug('[bs::loader] Async URL: '.$asyncUrl);
+        Debug::debug('[bs::loader] Async URL: '.(string)$asyncUrl);
         curl_setopt($ch, CURLOPT_URL, $asyncUrl);
         curl_setopt($ch, CURLOPT_TIMEOUT, $asyncTimeout);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $asyncTimeout);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
         if ($asyncProxy === false) {
             curl_setopt($ch, CURLOPT_HTTPPROXYTUNNEL, false);
             curl_setopt($ch, CURLOPT_PROXY, '');
@@ -74,13 +80,14 @@ if (isset($_SESSION['loaderState']['action'])) {
     if (is_array($actions)) {
         $merge_array = array();
         foreach ($actions as $action) {
-            /* @var \byteShard\Internal\Action $action */
-            $merge_array[] = $action->getResult($cell, $data);
+            if ($action instanceof \byteShard\Internal\Action) {
+                $merge_array[] = $action->getResult($cell, $data);
+            }
         }
         $result = array_merge_recursive($result, ...$merge_array);
     }
     if (is_array($result['state'])) {
-        $result['state'] = min(2, min($result['state']));
+        $result['state'] = min(2, $result['state']);
     }
     $http_response = new HttpResponse(Enum\HttpResponseType::JSON);
     $http_response->setResponseContent($result);

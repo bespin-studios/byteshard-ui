@@ -14,11 +14,11 @@ $private_file_path = null;
 /**
  * DO NOT MODIFY
  */
-if ($private_file_path === null) {
+if ($private_file_path === null) { /** @phpstan-ignore identical.alwaysTrue */
     $private_file_path = dirname(__DIR__);
 }
 
-if (substr($_SERVER['SCRIPT_FILENAME'], 0, 1) === '/') {
+if (is_string($_SERVER['SCRIPT_FILENAME']) && str_starts_with($_SERVER['SCRIPT_FILENAME'], '/')) {
     // probably linux/unix based OS, paths start with /
     define('BS_FILE_PUBLIC_ROOT', DIRECTORY_SEPARATOR . trim(__DIR__, DIRECTORY_SEPARATOR));
 } else {

@@ -14,6 +14,9 @@ if (php_sapi_name() === 'cli') {
 } else {
     $queueId = $_POST['QueueId'] ?? 'all';
 }
+if (!is_string($queueId)) {
+    $queueId = 'all';
+}
 
 $setup = true;
 require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'config.php';

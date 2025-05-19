@@ -23,9 +23,14 @@ require_once BS_FILE_BOOTSTRAP_APP;
 $error_handler->setResultObject(ErrorHandler::RESULT_OBJECT_POPUP);
 $httpResponse = new HttpResponse(Enum\HttpResponseType::JSON);
 
-$mode = Enum\UploadMode::tryFrom($_REQUEST['mode'] ?? '');
+$mode = Enum\UploadMode::tryFrom(is_string($_REQUEST['mode']) ? $_REQUEST['mode'] : '');
 if ($mode === null) {
-    if (isset($_FILES['file']['tmp_name']) && !empty($_FILES['name']['tmp_name'])) {
+    if (
+        isset($_FILES['file']) &&
+        is_array($_FILES['file']) &&
+        !empty($_FILES['file']['tmp_name']) &&
+        is_string($_FILES['file']['tmp_name'])
+    ) {
         //error occurred, remove the uploaded file from the temp dir
         unlink($_FILES['file']['tmp_name']);
     }
@@ -35,7 +40,9 @@ if ($mode === null) {
 }
 
 $upload = new Upload();
-$result = $upload->getClientResult($_GET['type'] ?? null, $_FILES['file'] ?? null);
+$type   = isset($_GET['type']) && is_string($_GET['type']) ? $_GET['type'] : null;
+$file   = isset($_FILES['file']) && is_array($_FILES['file']) ? $_FILES['file'] : null;
+$result = $upload->getClientResult($type, $file);
 
 
 $httpResponse->setResponseContent($result);

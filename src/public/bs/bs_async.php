@@ -13,11 +13,17 @@ require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'config.php';
 
 require_once BS_FILE_BOOTSTRAP_APP;
 
-if (isset($_COOKIE['BS_ASYNC'], $_SESSION['async'], $_SESSION['async'][$_COOKIE['BS_ASYNC']], $_SESSION['async'][$_COOKIE['BS_ASYNC']]['action'])) {
+if (isset($_COOKIE['BS_ASYNC'], $_SESSION['async']) &&
+    is_array($_SESSION['async']) &&
+    isset($_SESSION['async'][$_COOKIE['BS_ASYNC']]) &&
+    is_array($_SESSION['async'][$_COOKIE['BS_ASYNC']]) &&
+    isset($_SESSION['async'][$_COOKIE['BS_ASYNC']]['action']) &&
+    is_array($_SESSION['async'][$_COOKIE['BS_ASYNC']]['action'])
+) {
     $result['state'] = 2;
     Debug::debug('[bs::async] call initiated');
-    $actions         = $_SESSION['async'][$_COOKIE['BS_ASYNC']]['action']['nested'];
-    $data            = $_SESSION['async'][$_COOKIE['BS_ASYNC']]['action']['id'];
+    $actions = $_SESSION['async'][$_COOKIE['BS_ASYNC']]['action']['nested'];
+    $data    = $_SESSION['async'][$_COOKIE['BS_ASYNC']]['action']['id'];
     if (is_string($_SESSION['async'][$_COOKIE['BS_ASYNC']]['action']['cell'])) {
         $cell = $_SESSION[MAIN]->getCell($_SESSION[MAIN]->getIDByName($_SESSION['async'][$_COOKIE['BS_ASYNC']]['action']['cell']));
     } else {
@@ -28,13 +34,14 @@ if (isset($_COOKIE['BS_ASYNC'], $_SESSION['async'], $_SESSION['async'][$_COOKIE[
     if (is_array($actions)) {
         $merge_array = [];
         foreach ($actions as $action) {
-            /* @var \byteShard\Internal\Action $action */
-            $merge_array[] = $action->getResult($cell, $data);
+            if ($action instanceof \byteShard\Internal\Action) {
+                $merge_array[] = $action->getResult($cell, $data);
+            }
         }
         $result = array_merge_recursive($result, ...$merge_array);
     }
     if (is_array($result['state'])) {
-        $result['state'] = min(2, min($result['state']));
+        $result['state'] = min(2, $result['state']);
     }
     Debug::debug('[bs::async] finished');
 }
