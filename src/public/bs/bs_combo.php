@@ -16,14 +16,14 @@ require_once BS_FILE_BOOTSTRAP_APP;
 
 $httpResponse = new \byteShard\Internal\HttpResponse(HttpResponseType::XML);
 
-if (isset($_GET['i'])) {
+if (isset($_GET['i']) && is_string($_GET['i'])) {
     try {
         $payload = json_decode(Session::decrypt($_GET['i']));
     } catch (Exception) {
         $payload = null;
     }
     if ($payload instanceof stdClass) {
-        $className = $payload?->{'!c'} ?? '';
+        $className = $payload->{'!c'} ?? '';
         if ($className !== '' && class_exists($className)) {
             $combo = new $className();
             if ($combo instanceof Combo) {
