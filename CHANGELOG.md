@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/bespin-studios/byteshard-ui/compare/v1.2.2...v1.2.3) (2025-05-21)
+
+
+### Bug Fixes
+
+* pipeline and php 8.4 warnings ([4ba9aec](https://github.com/bespin-studios/byteshard-ui/commit/4ba9aeccd161006cabdb5b16ff3ea1a64cd1ee1a))
+
 ## [1.2.2](https://github.com/bespin-studios/byteshard-ui/compare/v1.2.1...v1.2.2) (2025-03-21)
 
 
