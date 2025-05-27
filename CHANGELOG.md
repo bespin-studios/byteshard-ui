@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/bespin-studios/byteshard-ui/compare/v1.2.3...v1.2.4) (2025-05-27)
+
+
+### Bug Fixes
+
+* use the correct response state on locale change ([4f1bd2d](https://github.com/bespin-studios/byteshard-ui/commit/4f1bd2d5b10f48745cdf27cc2bb24b90bb3580c2))
+
 ## [1.2.3](https://github.com/bespin-studios/byteshard-ui/compare/v1.2.2...v1.2.3) (2025-05-21)
 
 
