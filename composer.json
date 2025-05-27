@@ -14,7 +14,8 @@
     }
   },
   "require": {
-    "byteshard/asset-plugin": "^v1.0"
+    "byteshard/asset-plugin": "^v1.0",
+    "ext-curl": "*"
   },
   "autoload": {
     "psr-4": {

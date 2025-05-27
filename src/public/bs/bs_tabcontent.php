@@ -41,7 +41,7 @@ if ($requestData['action'] == 'getTabToolbar' && $_SESSION[MAIN] instanceof Sess
                 $array = $toolbarContent->getContents();
             }
         }
-        $array['state'] = 2;
+        $array['state'] = Enum\HttpResponseState::SUCCESS->value;
         $httpResponse->setResponseContent($array);
     }
 }

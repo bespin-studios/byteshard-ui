@@ -4,8 +4,10 @@
  * @license    See LICENSE file that is distributed with this source code
  */
 
-file_put_contents('php://stderr', json_encode(['channel' => 'byteShard', 'context' => ['file' => __FILE__, 'line' => 13], 'extra' => [], 'datetime' => \DateTime::createFromFormat('U.u', sprintf('%.6F', microtime(true)), new \DateTimeZone('UTC')), 'level' => 100, 'level_name' => 'DEBUG', 'message' => 'bs_async called'])."\n");
+file_put_contents('php://stderr', json_encode(['channel' => 'byteShard', 'context' => ['file' => __FILE__, 'line' => 13], 'extra' => [], 'datetime' => DateTime::createFromFormat('U.u', sprintf('%.6F', microtime(true)), new DateTimeZone('UTC')), 'level' => 100, 'level_name' => 'DEBUG', 'message' => 'bs_async called'])."\n");
 
+use byteShard\Enum\HttpResponseState;
+use byteShard\Internal\Action;
 use byteShard\Internal\Debug;
 
 $setup = false;
@@ -20,7 +22,7 @@ if (isset($_COOKIE['BS_ASYNC'], $_SESSION['async']) &&
     isset($_SESSION['async'][$_COOKIE['BS_ASYNC']]['action']) &&
     is_array($_SESSION['async'][$_COOKIE['BS_ASYNC']]['action'])
 ) {
-    $result['state'] = 2;
+    $result['state'] = HttpResponseState::SUCCESS->value;
     Debug::debug('[bs::async] call initiated');
     $actions = $_SESSION['async'][$_COOKIE['BS_ASYNC']]['action']['nested'];
     $data    = $_SESSION['async'][$_COOKIE['BS_ASYNC']]['action']['id'];
@@ -34,7 +36,7 @@ if (isset($_COOKIE['BS_ASYNC'], $_SESSION['async']) &&
     if (is_array($actions)) {
         $merge_array = [];
         foreach ($actions as $action) {
-            if ($action instanceof \byteShard\Internal\Action) {
+            if ($action instanceof Action) {
                 $merge_array[] = $action->getResult($cell, $data);
             }
         }

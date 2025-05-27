@@ -4,6 +4,7 @@
  * @license    See LICENSE file that is distributed with this source code
  */
 
+use byteShard\Enum\HttpResponseState;
 use byteShard\Internal\HttpResponse;
 use byteShard\Internal\ErrorHandler;
 use byteShard\Enum\HttpResponseType;
@@ -38,7 +39,7 @@ if (!is_array($requestData)) {
 if (array_key_exists('action', $requestData) && array_key_exists('locale', $requestData) && $requestData['action'] === 'changeLocale') {
     $httpResponse->setResponseContent(Session::getLocaleForAllObjects($requestData['locale']));
 } else {
-    $httpResponse->setResponseContent(['state' => DEBUG === true ? 1 : 0]);
+    $httpResponse->setResponseContent(['state' => HttpResponseState::ERROR->value]);
 }
 
 $httpResponse->printHTTPResponse();

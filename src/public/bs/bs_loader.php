@@ -4,6 +4,7 @@
  * @license    See LICENSE file that is distributed with this source code
  */
 
+use byteShard\Internal\Action;
 use byteShard\Internal\Debug;
 use byteShard\Internal\ErrorHandler;
 use byteShard\Internal\HttpResponse;
@@ -26,7 +27,7 @@ if (
     isset($_SESSION['loaderState']['action']) &&
     is_array($_SESSION['loaderState']['action'])
 ) {
-    $result['state'] = 2;
+    $result['state'] = Enum\HttpResponseState::SUCCESS->value;
     $actionArr       = $_SESSION['loaderState']['action'];
     $actions         = $actionArr['nested'] ?? null;
     $data            = $actionArr['id'] ?? null;
@@ -59,7 +60,7 @@ if (
             $context  = str_replace(Server::getProtocol().'://'.Server::getHost(), '', BS_WEB_FRAMEWORK_DIR);
             $asyncUrl = rtrim(Server::getProtocol().'://'.$host[0].'/'.trim($context, '/'), '/').'/bs_async.php';
         }
-        Debug::debug('[bs::loader] Async URL: '.(string)$asyncUrl);
+        Debug::debug('[bs::loader] Async URL: '.$asyncUrl);
         curl_setopt($ch, CURLOPT_URL, $asyncUrl);
         curl_setopt($ch, CURLOPT_TIMEOUT, $asyncTimeout);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $asyncTimeout);
@@ -80,7 +81,7 @@ if (
     if (is_array($actions)) {
         $merge_array = array();
         foreach ($actions as $action) {
-            if ($action instanceof \byteShard\Internal\Action) {
+            if ($action instanceof Action) {
                 $merge_array[] = $action->getResult($cell, $data);
             }
         }
