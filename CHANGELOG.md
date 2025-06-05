@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/bespin-studios/byteshard-ui/compare/v1.2.4...v1.2.5) (2025-06-05)
+
+
+### Bug Fixes
+
+* update frontend version ([fcabd00](https://github.com/bespin-studios/byteshard-ui/commit/fcabd00bad244669d7c3a76a9a43dadc861b679e))
+
 ## [1.2.4](https://github.com/bespin-studios/byteshard-ui/compare/v1.2.3...v1.2.4) (2025-05-27)
 
 
