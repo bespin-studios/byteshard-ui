@@ -30,7 +30,7 @@
         "watch": "node --stack-size=1000 ./node_modules/webpack/bin/webpack.js --devtool eval-source-map --watch --mode development"
       },
       "dependencies" : {
-        "@bespin-studios/byteshard-frontend": "~1.13.3",
+        "@bespin-studios/byteshard-frontend": "~1.14.0",
         "@bespin-studios/dhx": "5.0.8",
         "@bespin-studios/scheduler": "5.3.11"
       },
