@@ -1,3 +1,12 @@
+# [1.3.0](https://github.com/bespin-studios/byteshard-ui/compare/v1.2.6...v1.3.0) (2025-07-08)
+
+
+### Features
+
+* use new ApplicationRoot ([6f49667](https://github.com/bespin-studios/byteshard-ui/commit/6f496677e92a2aad1c3ca435bc40972a56b5355a))
+* use new ApplicationRoot ([f3db00f](https://github.com/bespin-studios/byteshard-ui/commit/f3db00f6bdd496137bc9b24564767a137ab47eb4))
+* use new ApplicationRoot ([5b63c2c](https://github.com/bespin-studios/byteshard-ui/commit/5b63c2c760f0fb164442a2a245e3378686dbb8aa))
+
 ## [1.2.6](https://github.com/bespin-studios/byteshard-ui/compare/v1.2.5...v1.2.6) (2025-06-23)
 
 
