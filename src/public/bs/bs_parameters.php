@@ -5,6 +5,7 @@
  */
 
 use byteShard\Enum;
+use byteShard\Internal\ApplicationRoot;
 use byteShard\Internal\HttpResponse;
 use byteShard\Internal\Request;
 use byteShard\Internal\Request\EventType;
@@ -22,7 +23,13 @@ $request      = new Request();
 $httpResponse = new HttpResponse(Enum\HttpResponseType::JSON);
 
 if (isset($env) && $request->getEvent() === EventType::OnReady) {
-    $response = Session::getNavigationArray($env->getDebug(), $env->getDhtmlxCssImagePath());
+    $applicationRoot = $env->getApplicationRoot();
+    if ($applicationRoot === null) {
+        $response = Session::getNavigationArray($env->getDebug(), $env->getDhtmlxCssImagePath());
+    } else {
+        $root = new ApplicationRoot($env);
+        $response = $root->getRootArray($applicationRoot);
+    }
     $httpResponse->setResponseContent($response);
 }
 
