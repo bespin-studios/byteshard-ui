@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/bespin-studios/byteshard-ui/compare/v1.3.0...v1.3.1) (2025-07-08)
+
+
+### Bug Fixes
+
+* add dependency to latest frontend ([518ffd8](https://github.com/bespin-studios/byteshard-ui/commit/518ffd8661a0bd3d24a4c03a09f349a3aa16b3a4))
+
 # [1.3.0](https://github.com/bespin-studios/byteshard-ui/compare/v1.2.6...v1.3.0) (2025-07-08)
 
 
