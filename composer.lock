@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e9b5f4b63a07b1a3db797fb98168b53b",
+    "content-hash": "280ba3a4efe75b507d183c9c2a7f9598",
     "packages": [
         {
             "name": "byteshard/asset-plugin",
@@ -142,16 +142,16 @@
         },
         {
             "name": "byteshard/core",
-            "version": "v2.9.3",
+            "version": "v2.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bespin-studios/byteshard-core.git",
-                "reference": "bf326f06d230819c2e353d8f91d42364d781ca72"
+                "reference": "bab64a7093f1b6a39bf34b197ee2bcc627b114e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bespin-studios/byteshard-core/zipball/bf326f06d230819c2e353d8f91d42364d781ca72",
-                "reference": "bf326f06d230819c2e353d8f91d42364d781ca72",
+                "url": "https://api.github.com/repos/bespin-studios/byteshard-core/zipball/bab64a7093f1b6a39bf34b197ee2bcc627b114e7",
+                "reference": "bab64a7093f1b6a39bf34b197ee2bcc627b114e7",
                 "shasum": ""
             },
             "require": {
@@ -216,9 +216,9 @@
             "description": "byteShard PHP core",
             "support": {
                 "issues": "https://github.com/bespin-studios/byteshard-core/issues",
-                "source": "https://github.com/bespin-studios/byteshard-core/tree/v2.9.3"
+                "source": "https://github.com/bespin-studios/byteshard-core/tree/v2.12.0"
             },
-            "time": "2025-05-27T15:15:38+00:00"
+            "time": "2025-06-27T09:15:59+00:00"
         },
         {
             "name": "byteshard/debug",
@@ -351,16 +351,16 @@
         },
         {
             "name": "byteshard/form",
-            "version": "v2.3.4",
+            "version": "v2.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bespin-studios/byteshard-form.git",
-                "reference": "c25178ddb8501956741cace333111dfeb529c4e3"
+                "reference": "25c17a83a9506d835d20a14fdbb9b175b1e5e0b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bespin-studios/byteshard-form/zipball/c25178ddb8501956741cace333111dfeb529c4e3",
-                "reference": "c25178ddb8501956741cace333111dfeb529c4e3",
+                "url": "https://api.github.com/repos/bespin-studios/byteshard-form/zipball/25c17a83a9506d835d20a14fdbb9b175b1e5e0b7",
+                "reference": "25c17a83a9506d835d20a14fdbb9b175b1e5e0b7",
                 "shasum": ""
             },
             "require": {
@@ -390,22 +390,22 @@
             "description": "Form components for the byteshard framework",
             "support": {
                 "issues": "https://github.com/bespin-studios/byteshard-form/issues",
-                "source": "https://github.com/bespin-studios/byteshard-form/tree/v2.3.4"
+                "source": "https://github.com/bespin-studios/byteshard-form/tree/v2.3.5"
             },
-            "time": "2025-05-27T13:45:06+00:00"
+            "time": "2025-06-11T09:26:05+00:00"
         },
         {
             "name": "byteshard/ldap",
-            "version": "v1.0.4",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bespin-studios/byteshard-ldap.git",
-                "reference": "49f0f0cd2066edab12104bab437bc482b2215bf1"
+                "reference": "40536ce2eaddb77d2e6aa411971a36cb75caba20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bespin-studios/byteshard-ldap/zipball/49f0f0cd2066edab12104bab437bc482b2215bf1",
-                "reference": "49f0f0cd2066edab12104bab437bc482b2215bf1",
+                "url": "https://api.github.com/repos/bespin-studios/byteshard-ldap/zipball/40536ce2eaddb77d2e6aa411971a36cb75caba20",
+                "reference": "40536ce2eaddb77d2e6aa411971a36cb75caba20",
                 "shasum": ""
             },
             "require": {
@@ -440,9 +440,9 @@
             "description": "Ldap wrapper for the byteShard framework",
             "support": {
                 "issues": "https://github.com/bespin-studios/byteshard-ldap/issues",
-                "source": "https://github.com/bespin-studios/byteshard-ldap/tree/v1.0.4"
+                "source": "https://github.com/bespin-studios/byteshard-ldap/tree/v1.1.0"
             },
-            "time": "2025-05-27T13:44:17+00:00"
+            "time": "2025-06-18T07:01:33+00:00"
         },
         {
             "name": "byteshard/locale",
@@ -1994,16 +1994,16 @@
         },
         {
             "name": "phpoffice/phpspreadsheet",
-            "version": "1.29.10",
+            "version": "1.29.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPOffice/PhpSpreadsheet.git",
-                "reference": "c80041b1628c4f18030407134fe88303661d4e4e"
+                "reference": "05b6c4378ddf3e81b460ea645c42b46432c0db25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/c80041b1628c4f18030407134fe88303661d4e4e",
-                "reference": "c80041b1628c4f18030407134fe88303661d4e4e",
+                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/05b6c4378ddf3e81b460ea645c42b46432c0db25",
+                "reference": "05b6c4378ddf3e81b460ea645c42b46432c0db25",
                 "shasum": ""
             },
             "require": {
@@ -2094,9 +2094,9 @@
             ],
             "support": {
                 "issues": "https://github.com/PHPOffice/PhpSpreadsheet/issues",
-                "source": "https://github.com/PHPOffice/PhpSpreadsheet/tree/1.29.10"
+                "source": "https://github.com/PHPOffice/PhpSpreadsheet/tree/1.29.11"
             },
-            "time": "2025-02-08T02:56:14+00:00"
+            "time": "2025-06-23T01:22:06+00:00"
         },
         {
             "name": "phpstan/phpdoc-parser",
@@ -2624,16 +2624,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v6.4.21",
+            "version": "v6.4.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "a3011c7b7adb58d89f6c0d822abb641d7a5f9719"
+                "reference": "9056771b8eca08d026cd3280deeec3cfd99c4d93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/a3011c7b7adb58d89f6c0d822abb641d7a5f9719",
-                "reference": "a3011c7b7adb58d89f6c0d822abb641d7a5f9719",
+                "url": "https://api.github.com/repos/symfony/console/zipball/9056771b8eca08d026cd3280deeec3cfd99c4d93",
+                "reference": "9056771b8eca08d026cd3280deeec3cfd99c4d93",
                 "shasum": ""
             },
             "require": {
@@ -2698,7 +2698,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v6.4.21"
+                "source": "https://github.com/symfony/console/tree/v6.4.23"
             },
             "funding": [
                 {
@@ -2714,7 +2714,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-04-07T15:42:41+00:00"
+            "time": "2025-06-27T19:37:22+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -3187,16 +3187,16 @@
         },
         {
             "name": "symfony/string",
-            "version": "v7.2.6",
+            "version": "v7.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "a214fe7d62bd4df2a76447c67c6b26e1d5e74931"
+                "reference": "f3570b8c61ca887a9e2938e85cb6458515d2b125"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/a214fe7d62bd4df2a76447c67c6b26e1d5e74931",
-                "reference": "a214fe7d62bd4df2a76447c67c6b26e1d5e74931",
+                "url": "https://api.github.com/repos/symfony/string/zipball/f3570b8c61ca887a9e2938e85cb6458515d2b125",
+                "reference": "f3570b8c61ca887a9e2938e85cb6458515d2b125",
                 "shasum": ""
             },
             "require": {
@@ -3254,7 +3254,7 @@
                 "utf8"
             ],
             "support": {
-                "source": "https://github.com/symfony/string/tree/v7.2.6"
+                "source": "https://github.com/symfony/string/tree/v7.3.0"
             },
             "funding": [
                 {
@@ -3270,20 +3270,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-04-20T20:18:16+00:00"
+            "time": "2025-04-20T20:19:01+00:00"
         },
         {
             "name": "tecnickcom/tcpdf",
-            "version": "6.9.4",
+            "version": "6.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tecnickcom/TCPDF.git",
-                "reference": "c838d7f7babb0d35763acfb9ecf78c3f45966f83"
+                "reference": "ca5b6de294512145db96bcbc94e61696599c391d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/c838d7f7babb0d35763acfb9ecf78c3f45966f83",
-                "reference": "c838d7f7babb0d35763acfb9ecf78c3f45966f83",
+                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/ca5b6de294512145db96bcbc94e61696599c391d",
+                "reference": "ca5b6de294512145db96bcbc94e61696599c391d",
                 "shasum": ""
             },
             "require": {
@@ -3333,7 +3333,7 @@
             ],
             "support": {
                 "issues": "https://github.com/tecnickcom/TCPDF/issues",
-                "source": "https://github.com/tecnickcom/TCPDF/tree/6.9.4"
+                "source": "https://github.com/tecnickcom/TCPDF/tree/6.10.0"
             },
             "funding": [
                 {
@@ -3341,7 +3341,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2025-05-13T11:34:35+00:00"
+            "time": "2025-05-27T18:02:28+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -3407,7 +3407,9 @@
     "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {},
+    "platform": {
+        "ext-curl": "*"
+    },
     "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
