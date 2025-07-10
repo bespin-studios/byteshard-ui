@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "280ba3a4efe75b507d183c9c2a7f9598",
+    "content-hash": "f9f8ceea8989942893ecf9050665c75b",
     "packages": [
         {
             "name": "byteshard/asset-plugin",
@@ -99,16 +99,16 @@
         },
         {
             "name": "byteshard/contracts",
-            "version": "v1.0.2",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bespin-studios/byteshard-contracts.git",
-                "reference": "442330f7c7bfa181f22efb3574363ad0dc479c9c"
+                "reference": "2c426c369f85b8bdc3c9cf301e072d269b64cad6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bespin-studios/byteshard-contracts/zipball/442330f7c7bfa181f22efb3574363ad0dc479c9c",
-                "reference": "442330f7c7bfa181f22efb3574363ad0dc479c9c",
+                "url": "https://api.github.com/repos/bespin-studios/byteshard-contracts/zipball/2c426c369f85b8bdc3c9cf301e072d269b64cad6",
+                "reference": "2c426c369f85b8bdc3c9cf301e072d269b64cad6",
                 "shasum": ""
             },
             "require": {
@@ -136,22 +136,22 @@
             "description": "Package for interfaces and other things used by the byteShard components",
             "support": {
                 "issues": "https://github.com/bespin-studios/byteshard-contracts/issues",
-                "source": "https://github.com/bespin-studios/byteshard-contracts/tree/v1.0.2"
+                "source": "https://github.com/bespin-studios/byteshard-contracts/tree/v1.0.3"
             },
-            "time": "2025-05-27T13:47:30+00:00"
+            "time": "2025-07-10T06:14:17+00:00"
         },
         {
             "name": "byteshard/core",
-            "version": "v2.12.0",
+            "version": "v2.12.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bespin-studios/byteshard-core.git",
-                "reference": "bab64a7093f1b6a39bf34b197ee2bcc627b114e7"
+                "reference": "e6ef8bc68cfc5db79a8fe5e4a90d349c0e71eb2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bespin-studios/byteshard-core/zipball/bab64a7093f1b6a39bf34b197ee2bcc627b114e7",
-                "reference": "bab64a7093f1b6a39bf34b197ee2bcc627b114e7",
+                "url": "https://api.github.com/repos/bespin-studios/byteshard-core/zipball/e6ef8bc68cfc5db79a8fe5e4a90d349c0e71eb2f",
+                "reference": "e6ef8bc68cfc5db79a8fe5e4a90d349c0e71eb2f",
                 "shasum": ""
             },
             "require": {
@@ -216,9 +216,9 @@
             "description": "byteShard PHP core",
             "support": {
                 "issues": "https://github.com/bespin-studios/byteshard-core/issues",
-                "source": "https://github.com/bespin-studios/byteshard-core/tree/v2.12.0"
+                "source": "https://github.com/bespin-studios/byteshard-core/tree/v2.12.3"
             },
-            "time": "2025-06-27T09:15:59+00:00"
+            "time": "2025-07-10T06:17:38+00:00"
         },
         {
             "name": "byteshard/debug",
@@ -265,16 +265,16 @@
         },
         {
             "name": "byteshard/enum",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bespin-studios/byteshard-enum.git",
-                "reference": "403e341781d9b319bae997dd9370a1b7aad23183"
+                "reference": "e330205c2c7a876fb797c1ee068fcbae040313e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bespin-studios/byteshard-enum/zipball/403e341781d9b319bae997dd9370a1b7aad23183",
-                "reference": "403e341781d9b319bae997dd9370a1b7aad23183",
+                "url": "https://api.github.com/repos/bespin-studios/byteshard-enum/zipball/e330205c2c7a876fb797c1ee068fcbae040313e2",
+                "reference": "e330205c2c7a876fb797c1ee068fcbae040313e2",
                 "shasum": ""
             },
             "require": {
@@ -301,9 +301,9 @@
             "description": "Global enums for the byteShard framework",
             "support": {
                 "issues": "https://github.com/bespin-studios/byteshard-enum/issues",
-                "source": "https://github.com/bespin-studios/byteshard-enum/tree/v1.2.0"
+                "source": "https://github.com/bespin-studios/byteshard-enum/tree/v1.3.0"
             },
-            "time": "2025-05-27T13:52:45+00:00"
+            "time": "2025-07-09T09:51:47+00:00"
         },
         {
             "name": "byteshard/exception",
@@ -351,16 +351,16 @@
         },
         {
             "name": "byteshard/form",
-            "version": "v2.3.5",
+            "version": "v2.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bespin-studios/byteshard-form.git",
-                "reference": "25c17a83a9506d835d20a14fdbb9b175b1e5e0b7"
+                "reference": "d0c038f81c7e6e96e5030065f0b5de5c627a6d23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bespin-studios/byteshard-form/zipball/25c17a83a9506d835d20a14fdbb9b175b1e5e0b7",
-                "reference": "25c17a83a9506d835d20a14fdbb9b175b1e5e0b7",
+                "url": "https://api.github.com/repos/bespin-studios/byteshard-form/zipball/d0c038f81c7e6e96e5030065f0b5de5c627a6d23",
+                "reference": "d0c038f81c7e6e96e5030065f0b5de5c627a6d23",
                 "shasum": ""
             },
             "require": {
@@ -390,9 +390,9 @@
             "description": "Form components for the byteshard framework",
             "support": {
                 "issues": "https://github.com/bespin-studios/byteshard-form/issues",
-                "source": "https://github.com/bespin-studios/byteshard-form/tree/v2.3.5"
+                "source": "https://github.com/bespin-studios/byteshard-form/tree/v2.3.6"
             },
-            "time": "2025-06-11T09:26:05+00:00"
+            "time": "2025-07-10T06:32:15+00:00"
         },
         {
             "name": "byteshard/ldap",

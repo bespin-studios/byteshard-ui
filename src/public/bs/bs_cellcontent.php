@@ -72,10 +72,10 @@ if ($request->getEvent() === Request\EventType::OnCellInit || $request->getEvent
             }
             $cellContent->setClientTimeZone($request->getClientTimeZone());
             $response          = $cellContent->getCellContent();
-            $response['state'] = Enum\HttpResponseState::SUCCESS->value;
+            $response?->setState(Enum\HttpResponseState::SUCCESS);
         } elseif ($cellContent instanceof Container) {
             $response          = $cellContent->getCellContent();
-            $response['state'] = Enum\HttpResponseState::SUCCESS->value;
+            $response?->setState(Enum\HttpResponseState::SUCCESS);
         }
     } else {
         $cell = new Cell();
@@ -83,7 +83,7 @@ if ($request->getEvent() === Request\EventType::OnCellInit || $request->getEvent
         // TODO check if form package is loaded
         $cellContent       = new NoPermissionCell($cell);
         $response          = $cellContent->getCellContent();
-        $response['state'] = Enum\HttpResponseState::SUCCESS->value;
+        $response?->setState(Enum\HttpResponseState::SUCCESS);
     }
 }
 
