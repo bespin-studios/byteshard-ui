@@ -19,7 +19,7 @@ require_once BS_FILE_BOOTSTRAP_APP;
 $tabId   = is_string($_POST['tabID']) ? $_POST['tabID'] : throw new Exception('tabID is not a string');
 $cellId  = is_string($_POST['cellID']) ? $_POST['cellID'] : throw new Exception('cellID is not a string');
 $session = $_SESSION[MAIN];
-if (!($session instanceof byteShard\Session)) {
+if (!($session instanceof byteShard\Internal\Session)) {
     throw new Exception('Session is not a byteShard\Session');
 }
 
