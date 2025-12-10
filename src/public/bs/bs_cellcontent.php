@@ -67,6 +67,7 @@ if ($request->getEvent() === Request\EventType::OnCellInit || $request->getEvent
         }
         $cellContent = new $className($cell);
         if ($cellContent instanceof CellContent) {
+            $cellContent->setContext($request->getContext());
             if ($cellContent instanceof Form) {
                 $cellContent->addFormSettings($env->getFormSettings());
             }
