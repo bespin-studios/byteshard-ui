@@ -15,35 +15,40 @@ require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'config.php';
 
 require_once BS_FILE_BOOTSTRAP_APP;
 
-if (isset($_COOKIE['BS_ASYNC'], $_SESSION['async']) &&
-    is_array($_SESSION['async']) &&
-    isset($_SESSION['async'][$_COOKIE['BS_ASYNC']]) &&
-    is_array($_SESSION['async'][$_COOKIE['BS_ASYNC']]) &&
-    isset($_SESSION['async'][$_COOKIE['BS_ASYNC']]['action']) &&
-    is_array($_SESSION['async'][$_COOKIE['BS_ASYNC']]['action'])
-) {
-    $result['state'] = HttpResponseState::SUCCESS->value;
-    Debug::debug('[bs::async] call initiated');
-    $actions = $_SESSION['async'][$_COOKIE['BS_ASYNC']]['action']['nested'];
-    $data    = $_SESSION['async'][$_COOKIE['BS_ASYNC']]['action']['id'];
-    if (is_string($_SESSION['async'][$_COOKIE['BS_ASYNC']]['action']['cell'])) {
-        $cell = $_SESSION[MAIN]->getCell($_SESSION[MAIN]->getIDByName($_SESSION['async'][$_COOKIE['BS_ASYNC']]['action']['cell']));
-    } else {
-        $cell = $_SESSION['async'][$_COOKIE['BS_ASYNC']]['action']['cell'];
-    }
-    unset($_SESSION['async'][$_COOKIE['BS_ASYNC']]);
+$asyncKey = (string)(array_key_exists('BS_ASYNC', $_COOKIE) ? $_COOKIE['BS_ASYNC'] : '');
 
-    if (is_array($actions)) {
-        $merge_array = [];
-        foreach ($actions as $action) {
-            if ($action instanceof Action) {
-                $merge_array[] = $action->getResult($cell, $data);
+if (array_key_exists('async', $_SESSION)) {
+    $async = $_SESSION['async'];
+    if (is_array($async) && array_key_exists($asyncKey, $async)) {
+        $asyncArray = $async[$asyncKey];
+        if (is_array($asyncArray) && array_key_exists('action', $asyncArray)) {
+            $actionPayload = $asyncArray['action'];
+            if (is_array($actionPayload) && array_key_exists('nested', $actionPayload) &&  array_key_exists('id', $actionPayload) && array_key_exists('cell', $actionPayload)) {
+                $result['state'] = HttpResponseState::SUCCESS->value;
+                Debug::debug('[bs::async] call initiated');
+                $actions = $actionPayload['nested'];
+                $data    = $actionPayload['id'];
+                if (is_string($actionPayload['cell'])) {
+                    $cell = $_SESSION[MAIN]->getCell($_SESSION[MAIN]->getIDByName($actionPayload['cell']));
+                } else {
+                    $cell = $actionPayload['cell'];
+                }
+                unset($_SESSION['async'][$asyncKey]);
+
+                if (is_array($actions)) {
+                    $merge_array = [];
+                    foreach ($actions as $action) {
+                        if ($action instanceof Action) {
+                            $merge_array[] = $action->getResult($cell, $data);
+                        }
+                    }
+                    $result = array_merge_recursive($result, ...$merge_array);
+                }
+                if (is_array($result['state'])) {
+                    $result['state'] = min(2, $result['state']);
+                }
+                Debug::debug('[bs::async] finished');
             }
         }
-        $result = array_merge_recursive($result, ...$merge_array);
     }
-    if (is_array($result['state'])) {
-        $result['state'] = min(2, $result['state']);
-    }
-    Debug::debug('[bs::async] finished');
 }
