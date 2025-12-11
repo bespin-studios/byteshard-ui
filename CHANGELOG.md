@@ -1,3 +1,16 @@
+# [1.4.0](https://github.com/bespin-studios/byteshard-ui/compare/v1.3.3...v1.4.0) (2025-12-11)
+
+
+### Bug Fixes
+
+* phpstan ([8ec8494](https://github.com/bespin-studios/byteshard-ui/commit/8ec8494acf1709c3d7db933a9bdf78435c0665c5))
+* phpstan ([3fc2840](https://github.com/bespin-studios/byteshard-ui/commit/3fc2840a03fad63839f1f9f45fab45f305100d90))
+
+
+### Features
+
+* cell context ([5791f39](https://github.com/bespin-studios/byteshard-ui/commit/5791f393a1a743776fc940d9d1c6e1c59b55124e))
+
 ## [1.3.3](https://github.com/bespin-studios/byteshard-ui/compare/v1.3.2...v1.3.3) (2025-08-01)
 
 
