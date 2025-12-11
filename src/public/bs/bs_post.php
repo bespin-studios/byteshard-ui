@@ -28,8 +28,9 @@ $id = ID::CellIdHelper($tabId, $cellId);
 $cell     = $session->getCell(ID::decrypt($id));
 $controls = $cell?->getContentControlType();
 foreach ($_POST as $key => $val) {
-    if (is_array($controls) && array_key_exists($key, $controls) && is_array($controls[$key])) {
-        $_POST[$controls[$key]['name']] = $val;
+    if (is_array($controls) && array_key_exists($key, $controls) && is_array($controls[$key]) && array_key_exists('name', $controls[$key]) && is_string($controls[$key]['name'])) {
+        $controlKey = $controls[$key]['name'];
+        $_POST[$controlKey] = $val;
         unset($_POST[$key]);
     }
 }

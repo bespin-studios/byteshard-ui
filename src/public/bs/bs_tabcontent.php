@@ -6,6 +6,7 @@
 
 use byteShard\Internal\HttpResponse;
 use byteShard\Internal\Session;
+use byteShard\Tab;
 use byteShard\Toolbar;
 use byteShard\Enum;
 
@@ -33,7 +34,7 @@ if (!is_array($requestData)) {
 // get the Toolbar of a Tab
 if ($requestData['action'] == 'getTabToolbar' && $_SESSION[MAIN] instanceof Session) {
     $tab = $_SESSION[MAIN]->getTab($requestData['tabID']);
-    if ($tab !== null) {
+    if ($tab instanceof Tab) {
         $className = $tab->getToolbarClass();
         if ($className !== '' && class_exists($className)) {
             $toolbarContent = new $className($tab);
