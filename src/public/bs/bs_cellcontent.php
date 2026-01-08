@@ -10,6 +10,7 @@ use byteShard\DynamicCellContent;
 use byteShard\Enum;
 use byteShard\Form;
 use byteShard\Internal\CellContent;
+use byteShard\Internal\ContentClassFactory;
 use byteShard\Internal\ErrorHandler;
 use byteShard\Internal\EventHandler;
 use byteShard\Internal\HttpResponse;
@@ -55,7 +56,7 @@ if ($request->getEvent() === Request\EventType::OnCellInit || $request->getEvent
     if ($id?->isCellId() === true) {
         $dynamicClassName = Cell::getClassName($id);
         if (class_exists($dynamicClassName) && is_subclass_of($dynamicClassName, DynamicCellContent::class)) {
-            $dynamicClass = new $dynamicClassName($cell);
+            $dynamicClass = ContentClassFactory::cellContent($dynamicClassName, $request->getContext(), $cell);
             $className    = $dynamicClass->getDynamicContentClassName();
             $cell         = $dynamicClass->getDynamicCell($className);
         }
@@ -65,9 +66,8 @@ if ($request->getEvent() === Request\EventType::OnCellInit || $request->getEvent
         if ($className === '') {
             $className = $cell->getContentClass();
         }
-        $cellContent = new $className($cell);
+        $cellContent = ContentClassFactory::cellContent($className, $request->getContext(), $cell);
         if ($cellContent instanceof CellContent) {
-            $cellContent->setContext($request->getContext());
             if ($cellContent instanceof Form) {
                 $cellContent->addFormSettings($env->getFormSettings());
             }
