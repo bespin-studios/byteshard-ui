@@ -53,12 +53,14 @@ if ($request->getEvent() === Request\EventType::OnCellInit || $request->getEvent
     $cell      = Session::getCell($request->getId());
     $className = '';
     $id        = $request->getId();
-    if ($id?->isCellId() === true) {
+    if ($id?->isCellId() === true && $cell !== null) {
         $dynamicClassName = Cell::getClassName($id);
         if (class_exists($dynamicClassName) && is_subclass_of($dynamicClassName, DynamicCellContent::class)) {
             $dynamicClass = ContentClassFactory::cellContent($dynamicClassName, $request->getContext(), $cell);
-            $className    = $dynamicClass->getDynamicContentClassName();
-            $cell         = $dynamicClass->getDynamicCell($className);
+            if ($dynamicClass instanceof DynamicCellContent) {
+                $className    = $dynamicClass->getDynamicContentClassName();
+                $cell         = $dynamicClass->getDynamicCell($className);
+            }
         }
     }
 

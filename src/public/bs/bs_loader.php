@@ -82,7 +82,8 @@ if (
         $merge_array = array();
         foreach ($actions as $action) {
             if ($action instanceof Action) {
-                $merge_array[] = $action->getResult($cell, $data);
+                //TODO: actionInitDTO
+                $merge_array[] = $action->getResult();
             }
         }
         $result = array_merge_recursive($result, ...$merge_array);

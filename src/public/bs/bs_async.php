@@ -39,7 +39,8 @@ if (array_key_exists('async', $_SESSION)) {
                     $merge_array = [];
                     foreach ($actions as $action) {
                         if ($action instanceof Action) {
-                            $merge_array[] = $action->getResult($cell, $data);
+                            //TODO: actionInit
+                            $merge_array[] = $action->getResult();
                         }
                     }
                     $result = array_merge_recursive($result, ...$merge_array);
