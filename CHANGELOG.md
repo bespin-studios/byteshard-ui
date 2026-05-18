@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/bespin-studios/byteshard-ui/compare/v1.5.0...v1.5.1) (2026-05-18)
+
+
+### Bug Fixes
+
+* update npm dependencies ([34ff063](https://github.com/bespin-studios/byteshard-ui/commit/34ff0634e856277bf24a5f0682860e8d1f085266))
+
 # [1.5.0](https://github.com/bespin-studios/byteshard-ui/compare/v1.4.1...v1.5.0) (2026-01-08)
 
 
