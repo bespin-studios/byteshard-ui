@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e98c6651534fc8d099dfb2731c2eaa51",
+    "content-hash": "af26908c2efa69e06004a4b1baa055cc",
     "packages": [
         {
             "name": "byteshard/asset-plugin",
@@ -143,16 +143,16 @@
         },
         {
             "name": "byteshard/core",
-            "version": "v2.24.0",
+            "version": "v2.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bespin-studios/byteshard-core.git",
-                "reference": "8650da221f2e650cdfafa7c54e2cec49953ebeac"
+                "reference": "e8656c925eca8e7470b37610530d471c21316f81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bespin-studios/byteshard-core/zipball/8650da221f2e650cdfafa7c54e2cec49953ebeac",
-                "reference": "8650da221f2e650cdfafa7c54e2cec49953ebeac",
+                "url": "https://api.github.com/repos/bespin-studios/byteshard-core/zipball/e8656c925eca8e7470b37610530d471c21316f81",
+                "reference": "e8656c925eca8e7470b37610530d471c21316f81",
                 "shasum": ""
             },
             "require": {
@@ -216,9 +216,9 @@
             "description": "byteShard PHP core",
             "support": {
                 "issues": "https://github.com/bespin-studios/byteshard-core/issues",
-                "source": "https://github.com/bespin-studios/byteshard-core/tree/v2.24.0"
+                "source": "https://github.com/bespin-studios/byteshard-core/tree/v2.25.0"
             },
-            "time": "2026-01-08T10:51:53+00:00"
+            "time": "2026-03-12T13:09:13+00:00"
         },
         {
             "name": "byteshard/debug",
@@ -351,16 +351,16 @@
         },
         {
             "name": "byteshard/form",
-            "version": "v2.5.1",
+            "version": "v2.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bespin-studios/byteshard-form.git",
-                "reference": "e9255943600fc344a7480355abaf52fc8a75e1d1"
+                "reference": "898b912004e00af26e73618846bab6b977f8f1ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bespin-studios/byteshard-form/zipball/e9255943600fc344a7480355abaf52fc8a75e1d1",
-                "reference": "e9255943600fc344a7480355abaf52fc8a75e1d1",
+                "url": "https://api.github.com/repos/bespin-studios/byteshard-form/zipball/898b912004e00af26e73618846bab6b977f8f1ff",
+                "reference": "898b912004e00af26e73618846bab6b977f8f1ff",
                 "shasum": ""
             },
             "require": {
@@ -390,9 +390,9 @@
             "description": "Form components for the byteshard framework",
             "support": {
                 "issues": "https://github.com/bespin-studios/byteshard-form/issues",
-                "source": "https://github.com/bespin-studios/byteshard-form/tree/v2.5.1"
+                "source": "https://github.com/bespin-studios/byteshard-form/tree/v2.9.0"
             },
-            "time": "2025-07-30T10:37:37+00:00"
+            "time": "2026-05-17T08:53:04+00:00"
         },
         {
             "name": "byteshard/ldap",
@@ -3394,5 +3394,5 @@
         "ext-curl": "*"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }
