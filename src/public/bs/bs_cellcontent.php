@@ -84,7 +84,7 @@ if ($request->getEvent() === Request\EventType::OnCellInit || $request->getEvent
         $cell = new Cell();
         $cell->setAccessType(Enum\AccessType::RW);
         // TODO check if form package is loaded
-        $cellContent       = new NoPermissionCell($cell);
+        $cellContent       = new NoPermissionCell($cell, '');
         $response          = $cellContent->getCellContent();
         $response?->setState(Enum\HttpResponseState::SUCCESS);
     }
