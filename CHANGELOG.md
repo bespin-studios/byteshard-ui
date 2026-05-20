@@ -1,3 +1,11 @@
+## [1.5.2](https://github.com/bespin-studios/byteshard-ui/compare/v1.5.1...v1.5.2) (2026-05-20)
+
+
+### Bug Fixes
+
+* add empty context for legacy no permissions view ([9132a0a](https://github.com/bespin-studios/byteshard-ui/commit/9132a0a29dec7da578ef2c0155382f359b23eadf))
+* add empty context for legacy no permissions view ([2688fc2](https://github.com/bespin-studios/byteshard-ui/commit/2688fc29ce68332e5ae6f14771fbe4dd25f732cb))
+
 ## [1.5.1](https://github.com/bespin-studios/byteshard-ui/compare/v1.5.0...v1.5.1) (2026-05-18)
 
 
