@@ -25,7 +25,16 @@ ini_set('max_input_time', (string)$timeout);
 
 $component_name = Locale::get('byteShard.bs_export.default_filename');
 $xid            = array_key_exists('xid', $_GET) ? $_GET['xid'] : '';
-$eventId        = '';
+$ctx            = '';
+if (array_key_exists('ctx', $_GET) && !empty($_GET['ctx'])) {
+    try {
+        $ctx = Session::decrypt($_GET['ctx']);
+    } catch (Exception) {
+        $ctx = '';
+    }
+}
+
+$eventId = '';
 if (array_key_exists('id', $_GET)) {
     $eventId = $_GET['id'];
 }
@@ -63,6 +72,6 @@ if ($action === null) {
 }
 
 if (isset($error_handler, $env) && ($env instanceof Environment)) {
-    $exportHandler = new ExportHandler($error_handler, $xid, $eventId, $env->getAppName(), $exportId, $eventName, $clientData, $getData);
+    $exportHandler = new ExportHandler($error_handler, $xid, $eventId, $env->getAppName(), $exportId, $eventName, $clientData, $getData, $ctx);
     $exportHandler->getExport($action);
 }
