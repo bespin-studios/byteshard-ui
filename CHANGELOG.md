@@ -1,3 +1,11 @@
+## [1.5.4](https://github.com/bespin-studios/byteshard-ui/compare/v1.5.3...v1.5.4) (2026-09-05)
+
+
+### Bug Fixes
+
+* add bs_image for form image ([9ed2851](https://github.com/bespin-studios/byteshard-ui/commit/9ed285126c78d7a7dba8ace17500fe479f0aa7fe))
+* fix php stan ([4b4bc41](https://github.com/bespin-studios/byteshard-ui/commit/4b4bc41af3a8372d54bcfde02965f16075cd4dcd))
+
 ## [1.5.3](https://github.com/bespin-studios/byteshard-ui/compare/v1.5.2...v1.5.3) (2026-07-16)
 
 
