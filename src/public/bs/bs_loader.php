@@ -37,12 +37,13 @@ if (
     $asyncProxy      = $actionArr['asyncProxy'] ?? null;
     $asyncTimeout    = $actionArr['asyncTimeout'] ?? null;
 
-    $cell = isset($actionArr['cell']) && is_string($actionArr['cell'])
+    //TODO: reimplement eventually
+    /*$cell = isset($actionArr['cell']) && is_string($actionArr['cell'])
         ? $_SESSION[MAIN]->getCell($_SESSION[MAIN]->getIDByName($actionArr['cell']))
-        : ($actionArr['cell'] ?? null);
+        : ($actionArr['cell'] ?? null);*/
     unset($_SESSION['loaderState']['action']);
 
-    if ($async === true) {
+    /*if ($async === true) {
         //exec('/usr/bin/php /Users/Shared/Sites/cam/public/log.php > /dev/null 2>/dev/null &');
 
         $id                                         = ID::UUID();
@@ -77,7 +78,7 @@ if (
         if (!empty($curl_error)) {
             Debug::error('[bs::loader] Async error: '.$curl_error);
         }
-    }
+    }*/
     if (is_array($actions)) {
         $merge_array = array();
         foreach ($actions as $action) {

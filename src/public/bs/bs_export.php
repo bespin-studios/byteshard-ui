@@ -55,7 +55,11 @@ if (array_key_exists('gd', $_GET) && !empty($_GET['gd'])) {
     }
 }
 
-$action = Action::tryFrom($_GET['action'] ?? '');
+if (is_string($_GET['action'])) {
+    $action = Action::tryFrom($_GET['action']);
+} else {
+    $action = null;
+}
 // used in toolbar exports... check if needed
 $exportId = array_key_exists('exportId', $_GET) ? $_GET['exportId'] : '';
 

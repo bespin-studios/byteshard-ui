@@ -4,8 +4,9 @@
  * @license    See LICENSE file that is distributed with this source code
  */
 
+use byteShard\ID\ID;
 use byteShard\Internal\HttpResponse;
-use byteShard\Internal\Session;
+use byteShard\Session;
 use byteShard\Tab;
 use byteShard\Toolbar;
 use byteShard\Enum;
@@ -32,8 +33,12 @@ if (!is_array($requestData)) {
 }
 
 // get the Toolbar of a Tab
-if ($requestData['action'] == 'getTabToolbar' && $_SESSION[MAIN] instanceof Session) {
-    $tab = $_SESSION[MAIN]->getTab($requestData['tabID']);
+if ($requestData['action'] == 'getTabToolbar') {
+    if ($requestData['tabID'] instanceof ID) {
+        $tab = Session::getTab($requestData['tabID']);
+    } else {
+        $tab = null;
+    }
     if ($tab instanceof Tab) {
         $className = $tab->getToolbarClass();
         if ($className !== '' && class_exists($className)) {

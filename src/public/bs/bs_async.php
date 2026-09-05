@@ -28,12 +28,13 @@ if (array_key_exists('async', $_SESSION)) {
                 Debug::debug('[bs::async] call initiated');
                 $actions = $actionPayload['nested'];
                 $data    = $actionPayload['id'];
-                if (is_string($actionPayload['cell'])) {
+                //TODO: fix eventually. No idea why we need the local $cell var and no idea what's in actionPayload['cell']
+                /*if (is_string($actionPayload['cell'])) {
                     $cell = $_SESSION[MAIN]->getCell($_SESSION[MAIN]->getIDByName($actionPayload['cell']));
                 } else {
                     $cell = $actionPayload['cell'];
                 }
-                unset($_SESSION['async'][$asyncKey]);
+                unset($_SESSION['async'][$asyncKey]);*/
 
                 if (is_array($actions)) {
                     $merge_array = [];
